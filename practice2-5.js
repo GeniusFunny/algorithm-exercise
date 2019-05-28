@@ -1,4 +1,28 @@
+/*
+5．	Shortest path in multistage graphs. Find the shortest path from 0 to 15 for the following graph.
+A multistage graph is a graph (1) G=(V,E) with V partitioned into K >= 2 disjoint subsets such that if (a,b) is in E, then a is in Vi , and b is in Vi+1 for some subsets in the partition; and (2) | V1 | = | VK | = 1.
 
+*/
+function shortestPath(graph, start, end) {
+  const dist = [], len = graph.length
+  for (let i = 0; i < len; i++) {
+    dist[i] = []
+    for (let j = 0; j < len; j++) {
+      dist[i][j] = graph[i][j]
+    }
+  }
+
+  for (let k = 0; k < len; k++) {
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len; j++) {
+        if (dist[i][k] + dist[k][j] < dist[i][j]) {
+          dist[i][j] = dist[i][k] + dist[k][j]
+        }
+      }
+    }
+  }
+  return dist[start][end]
+}
 let arr = []
 for (let i = 0; i < 16; i++) {
   arr[i] = Array(16).fill(Infinity)
@@ -34,25 +58,4 @@ arr[12][13] = 6
 arr[12][14] = 6
 arr[13][15] = 4
 arr[14][15] = 3 
-
-function shortestPath(graph, start, end) {
-  const dist = [], len = graph.length
-  for (let i = 0; i < len; i++) {
-    dist[i] = []
-    for (let j = 0; j < len; j++) {
-      dist[i][j] = graph[i][j]
-    }
-  }
-
-  for (let k = 0; k < len; k++) {
-    for (let i = 0; i < len; i++) {
-      for (let j = 0; j < len; j++) {
-        if (dist[i][k] + dist[k][j] < dist[i][j]) {
-          dist[i][j] = dist[i][k] + dist[k][j]
-        }
-      }
-    }
-  }
-  return dist[start][end]
-}
 console.log(shortestPath(arr, 0, 15))

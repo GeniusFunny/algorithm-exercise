@@ -1,3 +1,11 @@
+/*
+3．	Longest Common Substring. The following are some instances.
+a)	X: xzyzzyx   Y: zxyyzxz
+b)	X:MAEEEVAKLEKHLMLLRQEYVKLQKKLAETEKRCALLAAQANKESSSESFISRLLAIVAD
+Y:MAEEEVAKLEKHLMLLRQEYVKLQKKLAETEKRCTLLAAQANKENSNESFISRLLAIVAG
+
+*/
+
 function longestCommonSubstring(A, B) {
   const lenA = A.length
   const lenB = B.length
@@ -27,5 +35,5 @@ function longestCommonSubstring(A, B) {
 
 const strA = 'xzyzzyx'
 const strB = 'zxyyzxz'
-
+console.log(strA, strB)
 longestCommonSubstring(strA, strB)

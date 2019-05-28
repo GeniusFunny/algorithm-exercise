@@ -37,5 +37,7 @@ function selectK(A, a_l, a_r, B, b_l, b_r, k) {
 }
 let A = [1, 3, 5, 7, 9].reverse()
 let B = [2, 4, 6, 8, 10].reverse()
-
-console.log(selectK(A, 0, A.length - 1, B, 0, B.length - 1, 1))
+console.log('两个有序数组')
+console.log(A, B)
+console.log('查询第2大的元素')
+console.log(selectK(A, 0, A.length - 1, B, 0, B.length - 1, 2))

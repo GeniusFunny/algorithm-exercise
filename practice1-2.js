@@ -49,3 +49,5 @@ priority_queue.insert(item1)
 priority_queue.insert(item2)
 priority_queue.insert(item3)
 priority_queue.insert(item4)
+
+priority_queue.print()

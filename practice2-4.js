@@ -1,3 +1,9 @@
+/*
+4．	Max Sum. The following is an instance.
+a)	(-2，11，-4，13，-5，-2)
+
+*/
+
 function maxSum(arr) {
   const dp = [], len = arr.length
   dp[0] = Infinity * -1
@@ -8,5 +14,5 @@ function maxSum(arr) {
 }
 
 let arr = [-2, 11, -4, 13, -5, -2]
-
+console.log(arr)
 console.log(maxSum(arr))

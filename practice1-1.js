@@ -33,7 +33,7 @@ function merge(left, right) {
   return result
 }
 
-function binarySearch(arr, val) {
+function binarySearch(arr, val, i) {
   let low = 0, high = arr.length - 1, mid
   while(low < high) {
     mid = Math.floor((low + high) / 2) + 1
@@ -43,18 +43,18 @@ function binarySearch(arr, val) {
       low = mid
     }
   }
-  return arr[mid] === val
+
+  return arr[mid] === val && i !== mid
 }
 
 function findSum(arr, sum) {
+  console.log('需要查询的数组', arr)
+  console.log('x为:', sum)
   arr = mergeSort(arr)
   for (let i = 0; i < arr.length; i++) {
-    if (binarySearch(arr, sum - arr[i])) {
+    if (binarySearch(arr, sum - arr[i], i)) {
       return true
     }
   }
   return false
 }
-
-let arr = [5, 2, 3, 1, 7, 9, 10]
-findSum(arr, 19)

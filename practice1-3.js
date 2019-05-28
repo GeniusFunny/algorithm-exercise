@@ -53,9 +53,9 @@ function quickSort(arr, l, r) {
 }
 
 let arr = []
-for (let i = 0; i < 1000000; i++) {
-  arr.push(Math.floor(Math.random() * 1000000))
+for (let i = 0; i < 20; i++) {
+  arr.push(Math.floor(Math.random() * 100))
 }
-let start = Date.now()
+console.log(arr)
 quickSort(arr, 0, arr.length - 1)
-let end = Date.now()
+console.log(arr)

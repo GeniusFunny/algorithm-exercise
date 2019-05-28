@@ -8,6 +8,7 @@ d)	<7, 2, 4, 15, 20, 5>
 */
 
 function matrix_chain(arr, start, end) {
+  console.log(arr)
   const len = arr.length - 1 // 矩阵个数
   const s = {}, p = {}
 
@@ -27,8 +28,8 @@ function matrix_chain(arr, start, end) {
       }
     }
   }
-  console.log(s)
-  matrix_path(s, start, end)
+  // matrix_path(s, start, end)
+  console.log(`m[${start}:${end}]=`, p[`${start}:${end}`])
   return p[`${start}:${end}`]
 }
 function matrix_path(s, start, end) {
@@ -41,4 +42,4 @@ function matrix_path(s, start, end) {
 }
 
 let arr = [30, 35, 15, 5, 10, 20, 25]
-console.log(matrix_chain(arr, 2, 5))
+console.log(matrix_chain(arr, 1, 6))

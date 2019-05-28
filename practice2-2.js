@@ -1,4 +1,13 @@
+/*
+  2．	Longest Common Subsequence (LCS). The following are some instances.
+a)	X: xzyzzyx   Y: zxyyzxz
+b)	X:MAEEEVAKLEKHLMLLRQEYVKLQKKLAETEKRCALLAAQANKESSSESFISRLLAIVAD
+Y:MAEEEVAKLEKHLMLLRQEYVKLQKKLAETEKRCTLLAAQANKENSNESFISRLLAIVAG
+
+*/
 function longestCommonSubsequence(A, B) {
+  console.log(A)
+  console.log(B)
   const lenA = A.length
   const lenB = B.length
   const map = {}, path = {}
@@ -25,6 +34,7 @@ function longestCommonSubsequence(A, B) {
       }
     }
   }
+  console.log(map[`${lenA}-${lenB}`])
   printLCS(path, A, lenA, lenB)
 }
 
@@ -41,5 +51,4 @@ function printLCS(path, X, i, j) {
 }
 const strA = 'xzyzzyx'
 const strB = 'zxyyzxz'
-
 longestCommonSubsequence(strA, strB)
